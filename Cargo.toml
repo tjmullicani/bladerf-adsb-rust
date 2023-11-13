@@ -1,0 +1,23 @@
+[package]
+name = "bladerf_adsb"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+opt-level = 'z'     # Optimize for size
+lto = true          # Enable link-time optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations
+panic = 'abort'     # Abort on panic
+strip = true        # Strip symbols from binary*
+
+[dependencies]
+clap = { version = "4.4.7", features = ["cargo", "env", "derive"] }
+ctrlc = "3.4.1"
+bladerf = { path = "./bladerf" }
+io = "0.0.2"
+log = "0.4.20"
+env_logger = "0.10.0"
+thousands = "0.2.0"
+indicatif = "0.17.7"

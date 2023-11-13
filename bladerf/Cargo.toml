@@ -1,0 +1,19 @@
+[package]
+name = "bladerf"
+version = "0.1.0"
+edition = "2021"
+
+repository = "https://github.com/ryankurte/rust-bladerf"
+authors = ["Ryan Kurte <ryankurte@gmail.com>"]
+
+description = "WIP Rust wrapper for bladerf"
+readme = "README.md"
+license = "MIT"
+
+[lib]
+name = "bladerf"
+path = "src/lib.rs"
+
+[dependencies]
+libc = "0.1.10"
+pkg-config = "0.3.27"
